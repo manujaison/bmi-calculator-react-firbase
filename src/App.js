@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import LoginPage from './pages/LoginPage';
+import BmiCalculator from './components/BmiCalculator';
+import PrivateRoute from './components/PrivateRoute';
+
+/*function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/login" element={<LoginPage />} />
+        <PrivateRoute exact path="/" element={<BmiCalculator />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}*/
+
 
 function App() {
+  console.log('rendering App component');
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <LoginPage />
+      <BmiCalculator />
     </div>
   );
 }
